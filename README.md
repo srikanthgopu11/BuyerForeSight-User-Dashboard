@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# User Directory Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive React-based User Directory application that allows users to browse, search, and sort through a list of team members.
 
-## Available Scripts
+## 🚀 Live Features
 
-In the project directory, you can run:
+- **User Grid:** Displays users in a clean, card-based layout featuring names, emails, phones, and company information.
+- **Real-time Search:** Filter users instantly by Name or Email address.
+- **Smart Sorting:** Sort the directory by Name or Company name (Ascending/Descending).
+- **Detailed Profiles:** Dynamic routing to a dedicated User Detail page showing full profile information (Address, Website, Company, etc.).
+- **Responsive Design:** Optimized for all screen sizes using pure CSS.
 
-### `npm start`
+## 🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React.js** (Functional Components & Hooks)
+- **React Router Dom** (Navigation & Routing)
+- **Lucide React** (Modern iconography)
+- **CSS3** (Custom modular styling)
+- **JSONPlaceholder API** (External data source)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📁 Project Structure
 
-### `npm test`
+```text
+src/
+├── components/
+│   ├── SearchSortBar.js      # Search input and sort toggle buttons
+│   ├── SearchSortBar.css     # Styling for controls
+│   ├── UserCard.js           # Individual user summary card
+│   └── UserCard.css          # Styling for the grid cards
+├── pages/
+│   ├── Dashboard.js          # Main landing page with data logic
+│   ├── Dashboard.css         # Grid layout styling
+│   ├── UserDetail.js         # Detailed user profile page
+│   └── UserDetail.css        # Profile sheet styling
+├── App.js                    # Route configuration
+├── App.css                   # Global app-wide styles
+└── index.js                  # Application entry point
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+⚙️ Installation & Setup
 
-### `npm run build`
+Follow these steps to run the project locally on your machine:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Navigate to the project folder:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+cd user-directory
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install dependencies:
 
-### `npm run eject`
+npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Start the development server:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+📡 API Reference
+The application consumes data from the JSONPlaceholder API:
+All users: https://jsonplaceholder.typicode.com/users
+Single user: https://jsonplaceholder.typicode.com/users/{id}
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+💡 Technical Implementation Details
 
-## Learn More
+Search Logic: Implemented using a client-side .filter() method on the user state, ensuring instant results without extra API calls.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Sorting Logic: Uses the .sort() method with localeCompare to handle alphabetical sorting for both top-level strings (Name) and nested objects (Company Name).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+State Management: Utilizes React's useState for handling data, loading states, and search/sort configurations, and useEffect for data fetching.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Routing: Implemented dynamic path parameters (/user/:id) to fetch and display specific user data on the Detail Page.
