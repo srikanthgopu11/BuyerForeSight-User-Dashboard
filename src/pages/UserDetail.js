@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, User, Phone, Mail, Globe, Briefcase, MapPin } from 'lucide-react';
+import { ArrowLeft, Phone, Mail, Globe, Briefcase, MapPin } from 'lucide-react';
 import './UserDetail.css';
 
 const UserDetail = () => {
