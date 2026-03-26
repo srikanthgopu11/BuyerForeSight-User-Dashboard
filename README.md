@@ -2,6 +2,11 @@
 
 A modern, responsive React-based User Directory application that allows users to browse, search, and sort through a list of team members.
 
+
+**Live Link:** [User Directory Dashboard](https://srikanth-gopu-user-dashboard.netlify.app/) 🚀
+
+---
+
 ## 🚀 Live Features
 
 - **User Grid:** Displays users in a clean, card-based layout featuring names, emails, phones, and company information.
